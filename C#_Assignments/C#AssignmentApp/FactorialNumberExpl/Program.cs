@@ -13,6 +13,7 @@ namespace FactorialNumberExpl
 
         static void Main(string[] args)
         {
+            Console.WriteLine("******** PROGRAM FOR FACTORIAL NUMBER.********");
             Console.Write("Enter non negative integer :");
             //int number = Convert.ToInt32(Console.ReadLine());
 
@@ -43,6 +44,21 @@ namespace FactorialNumberExpl
         }
 
 
+        /*
+        // Using For Loop
+        static long CalculateFactorial(int num)
+        {
+            long factorial = 1;
+            for(int i = num; i > 1; i--)
+            {
+                factorial *= i;
+            }
+
+            return factorial;
+        }
+        */
+
+        //Hint : For calculating factorial number If you enter 5 (i.e n = 5) then it will calcualte like 5!= 5 * 4 * 3 * 2 * 1 and give output "120"
     }
-    
+
 }
