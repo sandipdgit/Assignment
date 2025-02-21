@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35806.99 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C#AssignmentApp", "C#AssignmentApp.csproj", "{6901C128-B8F4-4735-A7FA-B13CDE141949}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OopsAssignmentApp", "..\OopsAssignmentApp\OopsAssignmentApp.csproj", "{36085EB8-59B3-4865-9CBD-C2B799241D82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6901C128-B8F4-4735-A7FA-B13CDE141949}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6901C128-B8F4-4735-A7FA-B13CDE141949}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6901C128-B8F4-4735-A7FA-B13CDE141949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36085EB8-59B3-4865-9CBD-C2B799241D82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36085EB8-59B3-4865-9CBD-C2B799241D82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36085EB8-59B3-4865-9CBD-C2B799241D82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36085EB8-59B3-4865-9CBD-C2B799241D82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
