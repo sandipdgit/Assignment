@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35806.99 d17.13
+VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C#AssignmentApp", "C#AssignmentApp.csproj", "{6901C128-B8F4-4735-A7FA-B13CDE141949}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OopsAssignmentApp", "..\OopsAssignmentApp\OopsAssignmentApp.csproj", "{36085EB8-59B3-4865-9CBD-C2B799241D82}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SQLAssignment", "..\SQLAssignment\SQLAssignment.sqlproj", "{B105708A-9AC9-4898-87F1-58832D37DA13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,12 @@ Global
 		{36085EB8-59B3-4865-9CBD-C2B799241D82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36085EB8-59B3-4865-9CBD-C2B799241D82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36085EB8-59B3-4865-9CBD-C2B799241D82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B105708A-9AC9-4898-87F1-58832D37DA13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B105708A-9AC9-4898-87F1-58832D37DA13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B105708A-9AC9-4898-87F1-58832D37DA13}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B105708A-9AC9-4898-87F1-58832D37DA13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B105708A-9AC9-4898-87F1-58832D37DA13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B105708A-9AC9-4898-87F1-58832D37DA13}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
