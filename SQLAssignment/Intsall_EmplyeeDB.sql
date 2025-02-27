@@ -219,7 +219,7 @@ GO
 -- STEP 8 : 
 -- Write Inner Join Query 
 /* ------------------------------------------------------------------*/
-CREATE VIEW dbo.vGetDataUsingInnerJoin 
+CREATE OR ALTER VIEW dbo.vGetDataUsingInnerJoin 
 AS 
     SELECT e.ID, e.EmployeeName, e.Email, d.DepartmentName FROM dbo.Employee e
     INNER JOIN dbo.Department d ON e.DepartmentId = d.ID
@@ -232,7 +232,7 @@ GO
 -- Write Left Join Query 
 /* ------------------------------------------------------------------*/
 
-CREATE VIEW dbo.vGetDataUsingLeftJoin
+CREATE OR ALTER VIEW dbo.vGetDataUsingLeftJoin
 AS
     SELECT e.ID, e.EmployeeName, e.Email, d.DepartmentName FROM dbo.Employee e
     LEFT JOIN dbo.Department d ON e.DepartmentId = d.ID;
@@ -244,7 +244,7 @@ GO
 -- STEP 10 :: 
 -- Write Right Join Query 
 /* ------------------------------------------------------------------*/
-CREATE VIEW dbo.vGetDataUsingRightJoin
+CREATE OR ALTER VIEW dbo.vGetDataUsingRightJoin
 AS
     SELECT e.ID, e.EmployeeName, e.Email, d.DepartmentName FROM dbo.Employee e
     RIGHT JOIN dbo.Department d ON e.DepartmentId = d.ID;
@@ -256,7 +256,7 @@ GO
 -- Write Full Outer Join Query 
 /* ------------------------------------------------------------------*/
 
-CREATE VIEW dbo.vGetDataUsingFullOuterJoin
+CREATE OR ALTER VIEW dbo.vGetDataUsingFullOuterJoin
 AS
     SELECT e.ID, e.EmployeeName, e.Email, d.DepartmentName FROM dbo.Employee e
     FULL OUTER JOIN dbo.Department d ON e.DepartmentId = d.ID;
