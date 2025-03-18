@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OopsAssignmentApp", "..\Oop
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SQLAssignment", "..\SQLAssignment\SQLAssignment.sqlproj", "{B105708A-9AC9-4898-87F1-58832D37DA13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqAssignment", "..\LinqAssignment\LinqAssignment.csproj", "{D0979ADF-296E-4567-A55A-755BA55A062A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{B105708A-9AC9-4898-87F1-58832D37DA13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B105708A-9AC9-4898-87F1-58832D37DA13}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B105708A-9AC9-4898-87F1-58832D37DA13}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D0979ADF-296E-4567-A55A-755BA55A062A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0979ADF-296E-4567-A55A-755BA55A062A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0979ADF-296E-4567-A55A-755BA55A062A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0979ADF-296E-4567-A55A-755BA55A062A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
