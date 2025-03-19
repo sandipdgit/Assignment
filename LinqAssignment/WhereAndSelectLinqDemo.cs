@@ -12,34 +12,47 @@ namespace LinqAssignment.Model
 
         public static void Example(int index)
         {
-            
-            Console.WriteLine($"Example {index} : LINQ query using where and select clause to print selected student names where matching age condition");
             Console.WriteLine("");
-            Console.WriteLine("OUTPUT : ");
-
-            // Sample list of students
-            List<Student> students = new List<Student>
-            {
-                new Student { Id = 1, Name = "Ram", Age = 32 },
-                new Student { Id = 2, Name = "Sandip", Age = 38 },
-                new Student { Id = 3, Name = "Krishna", Age = 30 },
-                new Student { Id = 4, Name = "Dinesh", Age = 29 },
-                new Student { Id = 5, Name = "Santosh", Age = 31 },
-                new Student { Id = 6, Name = "Danny", Age = 41 },
-                new Student { Id = 7, Name = "David", Age = 35 }
-            };
+            Console.WriteLine($"Example {index} : LINQ query using where and select clause to print selected student names where matching age condition");
+            
+            Console.WriteLine("");
+            Console.WriteLine("OUTPUT : Using extention method syntax style");
 
             // LINQ query to filter students older than 29 and select names
-            var selectedStudents = students
-                .Where(s => s.Age > 29)
-                .Select(s => new { s.Name, s.Age });
+            var selectedStudentsDemo1 = Student.GetAllStudents()
+                                        .Where(s => s.Age > 29)
+                                        .Select(s => new { s.Name, s.Age });
 
             // Print results
-            foreach (var student in selectedStudents)
+            foreach (var student in selectedStudentsDemo1)
             {
                 Console.WriteLine(student.Name + "\t" + student.Age);
-                //Console.WriteLine($"Name: {student.Name}, Age: {student.Age}");
             }
+
+
+            Console.WriteLine("----------------------------------------------------------------");
+
+
+
+            Console.WriteLine("");
+            Console.WriteLine("OUTPUT : Using SQL Like syntax style");
+
+            // LINQ Inner Join Using SQL Like syntax style
+            var selectedStudentsDemo2 = from student in Student.GetAllStudents()
+                                        where student.Age > 29
+                                        select new
+                                        {
+                                            StudentName = student.Name,
+                                            StudentAge = student.Age
+                                        };
+
+            // Print results
+            foreach (var student in selectedStudentsDemo2)
+            {
+                Console.WriteLine(student.StudentName + "\t" + student.StudentAge);
+            }
+
+            Console.WriteLine("----------------------------------------------------------------");
 
         }
 

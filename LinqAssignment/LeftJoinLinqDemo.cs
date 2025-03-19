@@ -11,51 +11,60 @@ namespace LinqAssignment.Model
 
         public static void Example(int index)
         {
-            Console.WriteLine($"Example {index} : Left Join query using LINQ to print student and their respective courses");
             Console.WriteLine("");
-            Console.WriteLine("OUTPUT : ");
+            Console.WriteLine($"Example {index} : Left Join query using LINQ to print student and their respective courses");
+            
+            Console.WriteLine("");
+            Console.WriteLine("OUTPUT : Using extention method syntax style");
 
-            // Sample list of students
-            List<Student> students = new List<Student>
-            {
+            // LINQ Left Join Using SQL Like syntax style
+            var studentCoursesDemo1 = Student.GetAllStudents()
+                .GroupJoin(Course.GetAllCourses(), s => s.CourseId, c => c.CourseId, (students, courses) => new
+                {
+                    students,
+                    courses
+                })
+                .SelectMany(z => z.courses.DefaultIfEmpty(), (a, b) => new
+                {
+                    StudentName = a.students.Name,
+                    CourseName = b == null ? "No Course Assigned" : b.CourseName
+                });
 
-                new Student { Id = 1, Name = "Ram", Age = 32, Department = "Computer Science", CourseId = 101},
-                new Student { Id = 2, Name = "Sandip", Age = 38, Department = "Mathematics", CourseId = 102},
-                new Student { Id = 3, Name = "Krishna", Age = 30, Department = "Computer Science", CourseId = 101},
-                new Student { Id = 4, Name = "Dinesh", Age = 29, Department = "Physics", CourseId = 103},
-                new Student { Id = 5, Name = "Santosh", Age = 31, Department = "Mathematics", CourseId = 105}, // No matching course
-                new Student { Id = 6, Name = "Danny", Age = 33, Department = "Physics", CourseId = 104},
-                new Student { Id = 7, Name = "David", Age = 35, Department = "Physics", CourseId = 104}
-               
-            };
-
-            // Sample list of courses
-            List<Course> courses = new List<Course>
-            {
-                new Course { CourseId = 101, CourseName = "Mathematics" },
-                new Course { CourseId = 102, CourseName = "Physics" },
-                new Course { CourseId = 103, CourseName = "Chemistry" }
-                // CourseId 105 is missing to demonstrate Left Join behavior
-            };
-
-            // LINQ Left Join
-            var studentCourses = from student in students
-                                 join course in courses
-                                 on student.CourseId equals course.CourseId
-                                 into studentCourseGroup // Group join to handle left join
-                                 from course in studentCourseGroup.DefaultIfEmpty() // DefaultIfEmpty ensures Left Join behavior
-                                 select new
-                                 {
-                                     StudentName = student.Name,
-                                     CourseName = course != null ? course.CourseName : "No Course Assigned"
-                                 };
 
             // Print results
-            foreach (var sc in studentCourses)
+            foreach (var sc in studentCoursesDemo1)
             {
                 Console.WriteLine(sc.StudentName + "\t" + sc.CourseName);
                 //Console.WriteLine($"Student: {sc.StudentName}, Course: {sc.CourseName}");
             }
+
+            Console.WriteLine("----------------------------------------------------------------");
+
+
+
+            Console.WriteLine("");
+            Console.WriteLine("OUTPUT : Using SQL Like syntax style");
+
+            // LINQ Left Join Using SQL Like syntax style
+            var studentCoursesDemo2 = from student in Student.GetAllStudents()
+                                    join course in Course.GetAllCourses()
+                                    on student.CourseId equals course.CourseId
+                                    into studentCourseGroup // Group join to handle left join
+                                    from course in studentCourseGroup.DefaultIfEmpty() // DefaultIfEmpty ensures Left Join behavior
+                                    select new
+                                    {
+                                        StudentName = student.Name,
+                                        CourseName = course != null ? course.CourseName : "No Course Assigned"
+                                    };
+
+            // Print results
+            foreach (var sc in studentCoursesDemo2)
+            {
+                Console.WriteLine(sc.StudentName + "\t" + sc.CourseName);
+                //Console.WriteLine($"Student: {sc.StudentName}, Course: {sc.CourseName}");
+            }
+
+            Console.WriteLine("----------------------------------------------------------------");
         }
     }
 }
