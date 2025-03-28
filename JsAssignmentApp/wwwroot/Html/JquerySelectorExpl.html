@@ -1,0 +1,59 @@
+<!-- /*********************************************************************************** */
+/*
+Write a program to add event or effect using below jQuery Selectors
+•	element Selector
+•	#id Selector
+•	.class Selector
+*/
+/*********************************************************************************** */ -->
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Selectors Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .highlight {
+            background-color: greenyellow;
+        }
+
+        #message {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JQuery Selectors Example</h1>
+
+    <button id="btnClick">Click Me</button>
+
+    <p class="paragraph">This is a paragraph with class 'paragraph'.</p>
+    <p class="paragraph">Another paragraph with the same class.</p>
+
+    <div id="message">This is a div with ID 'message'.</div>
+
+    <script>
+        $(document).ready(function () {
+            // Element Selector
+            $('p').hover(function () {
+                $(this).toggleClass('highlight');
+            });
+
+            // #id Selector
+            $('#btnClick').click(function () {
+                alert('Button with ID clicked!');
+            });
+
+            // .class Selector
+            $('.paragraph').click(function () {
+                $('#message').text('Paragraph clicked!');
+            });
+        });
+    </script>
+</body>
+</html>

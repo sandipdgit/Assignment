@@ -1,0 +1,75 @@
+<!-- /*********************************************************************************** */
+/*
+Implement jQuery DOM Manipulation using below methods
+•	Get
+•	Set
+•	Add
+•	Remove
+•	Get and Set CSS Classes
+•	css() Method
+*/
+/*********************************************************************************** */ -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery DOM Manipulation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">DOM Manipulation Using JQuery</h1>
+    <p class="description">This is a sample paragraph.</p>
+    <input type="text" id="inputField" placeholder="Type something...">
+    <button id="getBtn">Get Text</button>
+    <button id="setBtn">Set Text</button>
+    <button id="addBtn">Add Element</button>
+    <button id="removeBtn">Remove Element</button>
+    <button id="toggleClassBtn">Toggle Class</button>
+    <button id="cssBtn">Change CSS</button>
+
+    <div id="output"></div>
+
+    <script>
+        $(document).ready(function () {
+            // Get Method
+            $('#getBtn').click(function () {
+                const text = $('#title').text();
+                $('#output').text('Get Text: ' + text);
+            });
+
+            // Set Method
+            $('#setBtn').click(function () {
+                const newText = $('#inputField').val();
+                $('#title').text(newText);
+            });
+
+            // Add Method
+            $('#addBtn').click(function () {
+                $('<p>New paragraph added.</p>').appendTo('body');
+            });
+
+            // Remove Method
+            $('#removeBtn').click(function () {
+                $('.description').remove();
+            });
+
+            // Get and Set CSS Classes
+            $('#toggleClassBtn').click(function () {
+                $('#title').toggleClass('highlight');
+            });
+
+            // css() Method
+            $('#cssBtn').click(function () {
+                $('#title').css({ 'color': 'blue', 'font-size': '32px' });
+            });
+        });
+    </script>
+</body>
+</html>

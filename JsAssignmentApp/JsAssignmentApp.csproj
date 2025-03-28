@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Html\index.html" />
+    <None Include="wwwroot\Html\JavascriptFieldElementExpl.html" />
+    <None Include="wwwroot\Html\JqueryDomManipulationExpl.html" />
+    <None Include="wwwroot\Html\JqueryEffectsExpl.html" />
+    <None Include="wwwroot\Html\JqueryEventExpl.html" />
+    <None Include="wwwroot\Html\JquerySelectorExpl.html" />
+    <None Include="wwwroot\Html\JqueryWithAjaxMethodExpl.html" />
+    <None Include="wwwroot\Js\ArrayMethodExpl.js" />
+    <None Include="wwwroot\Js\ErrorHandlingExpl.js" />
+    <None Include="wwwroot\Js\JsonExpl.js" />
+    <None Include="wwwroot\Js\ShallowAndDeepCopyExpl.js" />
+  </ItemGroup>
+
+</Project>

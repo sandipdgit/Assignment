@@ -1,0 +1,113 @@
+<!-- /*********************************************************************************** */
+/*
+Create html page with some fields/elements. Apply styling using CSS classes and use the 
+methods below to find and apply styling to elements
+•	querySelector
+•	querySelectorAll
+•	getElementById
+•	getElementsByName
+•	getElementsByTagName
+•	getElementsByClassName
+*/
+/*********************************************************************************** */ -->
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Styling Demo</title>
+    <style>
+        .highlight {
+            background-color: lightgoldenrodyellow;
+            padding: 10px;
+            padding-block: 1px;
+            padding-inline: 2px;
+            border: 1px solid red;
+        }
+
+        .border {
+            border: 2px solid green;
+            padding: 10px;
+            padding-block: 1px;
+            padding-inline: 2px;
+        }
+
+        .text-red {
+            color: red;
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        fieldset {
+            display: block;
+            min-inline-size: min-content;
+            margin-inline: 2px;
+            border-width: 2px;
+            border-style: groove;
+            border-color: threedface;
+            border-image: initial;
+            padding-block: 0.35em 0.625em;
+            padding-inline: 0.75em;
+        }
+
+        .message {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">DOM Manipulation Using Javascript</h1>
+
+    <fieldset>
+        <legend>Login Info:</legend>
+        <label for="username">User Name:</label><br>
+        <input type="text" id="username" name="username" value="Sandip" placeholder="Username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" value="Password" placeholder="Password"><br><br>
+        <button id="submit-btn">Submit</button>
+    </fieldset>
+
+
+
+    <div class="message">This is a message box.</div>
+    <p class="text-red">This is a paragraph with red text.</p>
+    <p class="text-red">Another red text paragraph.</p>
+
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+    </ul>
+
+    <script>
+        //alert("Script is running..");
+        // Using querySelector
+        document.querySelector('button').classList.add('highlight');
+
+        // Using querySelectorAll
+        document.querySelectorAll('.text-red').forEach(el => el.classList.add('border'));
+
+        // Using getElementById
+        document.getElementById('main-title').classList.add('highlight');
+
+        // Using getElementsByName
+        document.getElementsByName('username')[0].classList.add('border');
+
+        // Using getElementsByTagName
+        const listItems = document.getElementsByTagName('li');
+        for (let i = 0; i < listItems.length; i++) {
+            listItems[i].classList.add('hidden');
+        }
+
+        // Using getElementsByClassName
+        const messageBoxes = document.getElementsByClassName('message');
+        for (let i = 0; i < messageBoxes.length; i++) {
+            messageBoxes[i].classList.add('border');
+        }</script>
+</body>
+</html>

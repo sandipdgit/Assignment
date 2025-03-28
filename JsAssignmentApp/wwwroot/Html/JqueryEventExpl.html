@@ -1,0 +1,95 @@
+<!-- /*********************************************************************************** */
+/*
+    Implement below jQuery Event Methods
+    •	click
+    •	dblclick
+    •	mouseenter
+    •	mouseleave
+    •	keypress
+    •	keydown
+    •	keyup
+    •	focus
+    •	blur
+*/
+/*********************************************************************************** */ -->
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Event Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .highlight {
+            background-color: greenyellow;
+        }
+
+        #message {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JQuery Event Example</h1>
+
+    <button id="clickButton">Click Me</button>
+    <button id="dblclickButton">Double Click Me</button>
+    <div id="hoverDiv" style="width: 100px; height: 100px; background-color: lightgray;">Hover Me</div>
+    <input type="text" id="textInput" placeholder="Type something...">
+
+    <script>
+        $(document).ready(function () {
+
+            // Click event
+            $('#clickButton').click(function () {
+                alert('Button clicked!');
+            });
+
+            // Double click event
+            $('#dblclickButton').dblclick(function () {
+                alert('Button double-clicked!');
+            });
+
+            // Mouse enter event
+            $('#hoverDiv').mouseenter(function () {
+                $(this).css('background-color', 'lightblue');
+            });
+
+            // Mouse leave event
+            $('#hoverDiv').mouseleave(function () {
+                $(this).css('background-color', '');
+            });
+
+            // Key press event
+            $('#textInput').keypress(function (event) {
+                console.log('Key pressed: ' + event.key);
+            });
+
+            // Key down event
+            $('#textInput').keydown(function (event) {
+                console.log('Key down: ' + event.key);
+            });
+
+            // Key up event
+            $('#textInput').keyup(function (event) {
+                console.log('Key up: ' + event.key);
+            });
+
+            // Focus event
+            $('#textInput').focus(function () {
+                $(this).css('border', '2px solid green');
+            });
+
+            // Blur event
+            $('#textInput').blur(function () {
+                $(this).css('border', '1px solid #ccc');
+            });
+
+        });
+    </script>
+</body>
+</html>

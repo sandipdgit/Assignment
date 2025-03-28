@@ -1,0 +1,87 @@
+<!-- /*********************************************************************************** */
+/*
+Implement below jQuery Effects
+•	Hide and Show
+•	Fade
+•	Slide
+•	Animate
+•	Stop
+*/
+/*********************************************************************************** */ -->
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Effects Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: skyblue;
+            margin: 10px;
+        }
+
+        .container {
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JQuery Effects Demo</h1>
+
+    <div class="container">
+        <h3>Hide and Show</h3>
+        <div class="box" id="box1"></div>
+        <button onclick="$('#box1').hide(1000)">Hide</button>
+        <button onclick="$('#box1').show(1000)">Show</button>
+    </div>
+
+    <div class="container">
+        <h3>Fade</h3>
+        <div class="box" id="box2"></div>
+        <button onclick="$('#box2').fadeOut(1000)">Fade Out</button>
+        <button onclick="$('#box2').fadeIn(1000)">Fade In</button>
+    </div>
+
+    <div class="container">
+        <h3>Slide</h3>
+        <div class="box" id="box3"></div>
+        <button onclick="$('#box3').slideUp(1000)">Slide Up</button>
+        <button onclick="$('#box3').slideDown(1000)">Slide Down</button>
+    </div>
+
+    <div class="container">
+        <h3>Animate</h3>
+        <div class="box" id="box4"></div>
+        <button onclick="$('#box4').animate({width: '300px', height: '150px'}, 1000)">Animate</button>
+        <button onclick="$('#box4').animate({width: '200px', height: '100px'}, 1000)">Reset</button>
+    </div>
+
+    <div class="container">
+        <h3>Stop</h3>
+        <div class="box" id="box5"></div>
+        <button onclick="$('#box5').animate({left: '200px'}, 5000)">Start Animation</button>
+        <button onclick="$('#box5').stop()">Stop Animation</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#box5').css({ position: 'relative' });
+        });
+    </script>
+</body>
+</html>

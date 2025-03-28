@@ -1,0 +1,51 @@
+<!-- /*********************************************************************************** */
+/*
+Implement below jQuery - AJAX methods
+•	Get
+•	Post
+*/
+/*********************************************************************************** */ -->
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX Methods</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>JQuery AJAX Methods Demo</h1>
+
+    <button id="getBtn">Get Data</button>
+    <button id="postBtn">Post Data</button>
+
+    <div id="response" style="margin-top: 20px; border: 1px solid #ccc; padding: 10px;"></div>
+
+    <script>
+        $(document).ready(function () {
+            // GET Request
+            $('#getBtn').click(function () {
+                $.get('https://jsonplaceholder.typicode.com/posts/1', function (data) {
+                    $('#response').html('<h3>GET Response:</h3><pre>' + JSON.stringify(data, null, 4) + '</pre>');
+                }).fail(function () {
+                    $('#response').text('Error fetching data.');
+                });
+            });
+
+            // POST Request
+            $('#postBtn').click(function () {
+                $.post('https://jsonplaceholder.typicode.com/posts', {
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1
+                }, function (data) {
+                    $('#response').html('<h3>POST Response:</h3><pre>' + JSON.stringify(data, null, 4) + '</pre>');
+                }).fail(function () {
+                    $('#response').text('Error posting data.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
